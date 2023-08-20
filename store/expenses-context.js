@@ -9,7 +9,7 @@ const DUMMY_EXPENSES = [
     id: 'e1',
     description: 'A pair of shoes',
     amount: 59.99,
-    date: new Date('2021-12-19'),
+    date: new Date('2023-08-19'),
   },
   {
     id: 'e2',
@@ -80,7 +80,14 @@ const ExpensesContextProvider = ({ children }) => {
   }
 
   return (
-    <ExpensesContext.Provider>
+    <ExpensesContext.Provider
+      value={{
+        expenses: expensesState,
+        addExpense: addExpense,
+        deleteExpense: deleteExpense,
+        updateExpense: updateExpense,
+      }}
+    >
       {children}
     </ExpensesContext.Provider>
   )
