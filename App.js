@@ -17,10 +17,12 @@ const ExpensesOverview = () => (
     screenOptions={{
       headerStyle: {
         backgroundColor: GlobalStyles.colors.primary500,
+        shadowColor: GlobalStyles.colors.primary500,
       },
       headerTintColor: 'white',
       tabBarStyle: {
         backgroundColor: GlobalStyles.colors.primary500,
+        borderTopColor: GlobalStyles.colors.primary500,
       },
       tabBarActiveTintColor: GlobalStyles.colors.accent500,
     }}
@@ -31,7 +33,7 @@ const ExpensesOverview = () => (
       options={{
         title: 'Recent Expenses',
         tabBarLabel: 'Recent',
-        tabBarIcon: ({color, size}) => <Ionicons name='hourglass' size={size} color={color} />
+        tabBarIcon: ({color, size}) => <Ionicons name='hourglass' size={size} color={color} />,
       }}
     />
     <BottomTabs.Screen
@@ -50,7 +52,7 @@ export default function App() {
   return (
 
     <>
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
