@@ -1,7 +1,7 @@
 import { createContext, useReducer } from "react";
 
 const ADD = 'ADD'
-const UDPATE = 'UPDATE'
+const UPDATE = 'UPDATE'
 const DELETE = 'DELETE'
 
 const DUMMY_EXPENSES = [
@@ -49,7 +49,7 @@ const expensesReducer = (state, action) => {
     case ADD:
       const id = new Date().toDateString() + Math.random().toString()
       return [{ ...action.payload, id: id }, ...state]
-    case UDPATE:
+    case UPDATE:
       const updatableExpenseIndex = state.findIndex(expense => expense.id === action.payload.id)
       const updatableExpense = state[updatableExpenseIndex]
       const updatedItem = { ...updatableExpense, ...action.payload.data }
