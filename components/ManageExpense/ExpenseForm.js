@@ -13,7 +13,7 @@ const ExpenseForm = ({ onCancel, onSubmit, submitButtonLabel, defaultValues }) =
       isValid: true,
     },
     date: {
-      value: defaultValues ? getFormatedDate(defaultValues.date) : '',
+      value: defaultValues ? getFormatedDate(defaultValues.date) : getFormatedDate(new Date()),
       isValid: true,
     },
     description: {
@@ -32,7 +32,7 @@ const ExpenseForm = ({ onCancel, onSubmit, submitButtonLabel, defaultValues }) =
 
   const submitHandler = () => {
     const expenseData = {
-      amount: +inputs.amount.value,
+      amount: +(inputs.amount.value.replace(/,/g, '.')),
       date: new Date(inputs.date.value || ''),
       description: inputs.description.value,
     }
